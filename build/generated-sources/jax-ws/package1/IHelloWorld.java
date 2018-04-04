@@ -8,6 +8,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
+import javax.xml.ws.FaultAction;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -27,18 +28,6 @@ public interface IHelloWorld {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<package1.Product>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getProducts", targetNamespace = "http://package1/", className = "package1.GetProducts")
-    @ResponseWrapper(localName = "getProductsResponse", targetNamespace = "http://package1/", className = "package1.GetProductsResponse")
-    @Action(input = "http://package1/IHelloWorld/getProductsRequest", output = "http://package1/IHelloWorld/getProductsResponse")
-    public List<Product> getProducts();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns java.lang.String
@@ -51,5 +40,37 @@ public interface IHelloWorld {
     public String getHelloWorldAsString(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     * @throws InvalidInputException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getHelloDarknessMyOldFriend", targetNamespace = "http://package1/", className = "package1.GetHelloDarknessMyOldFriend")
+    @ResponseWrapper(localName = "getHelloDarknessMyOldFriendResponse", targetNamespace = "http://package1/", className = "package1.GetHelloDarknessMyOldFriendResponse")
+    @Action(input = "http://package1/IHelloWorld/getHelloDarknessMyOldFriendRequest", output = "http://package1/IHelloWorld/getHelloDarknessMyOldFriendResponse", fault = {
+        @FaultAction(className = InvalidInputException_Exception.class, value = "http://package1/IHelloWorld/getHelloDarknessMyOldFriend/Fault/InvalidInputException")
+    })
+    public String getHelloDarknessMyOldFriend(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws InvalidInputException_Exception
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<package1.Product>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getProducts", targetNamespace = "http://package1/", className = "package1.GetProducts")
+    @ResponseWrapper(localName = "getProductsResponse", targetNamespace = "http://package1/", className = "package1.GetProductsResponse")
+    @Action(input = "http://package1/IHelloWorld/getProductsRequest", output = "http://package1/IHelloWorld/getProductsResponse")
+    public List<Product> getProducts();
 
 }

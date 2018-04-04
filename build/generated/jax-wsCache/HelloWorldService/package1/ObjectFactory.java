@@ -24,9 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _InvalidInputException_QNAME = new QName("http://package1/", "InvalidInputException");
     private final static QName _GetHelloWorldAsString_QNAME = new QName("http://package1/", "getHelloWorldAsString");
     private final static QName _GetProductsResponse_QNAME = new QName("http://package1/", "getProductsResponse");
+    private final static QName _GetHelloDarknessMyOldFriendResponse_QNAME = new QName("http://package1/", "getHelloDarknessMyOldFriendResponse");
     private final static QName _GetHelloWorldAsStringResponse_QNAME = new QName("http://package1/", "getHelloWorldAsStringResponse");
+    private final static QName _GetHelloDarknessMyOldFriend_QNAME = new QName("http://package1/", "getHelloDarknessMyOldFriend");
     private final static QName _GetProducts_QNAME = new QName("http://package1/", "getProducts");
 
     /**
@@ -45,11 +48,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvalidInputException }
+     * 
+     */
+    public InvalidInputException createInvalidInputException() {
+        return new InvalidInputException();
+    }
+
+    /**
+     * Create an instance of {@link GetHelloDarknessMyOldFriendResponse }
+     * 
+     */
+    public GetHelloDarknessMyOldFriendResponse createGetHelloDarknessMyOldFriendResponse() {
+        return new GetHelloDarknessMyOldFriendResponse();
+    }
+
+    /**
      * Create an instance of {@link GetProductsResponse }
      * 
      */
     public GetProductsResponse createGetProductsResponse() {
         return new GetProductsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetHelloDarknessMyOldFriend }
+     * 
+     */
+    public GetHelloDarknessMyOldFriend createGetHelloDarknessMyOldFriend() {
+        return new GetHelloDarknessMyOldFriend();
     }
 
     /**
@@ -77,6 +104,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InvalidInputException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://package1/", name = "InvalidInputException")
+    public JAXBElement<InvalidInputException> createInvalidInputException(InvalidInputException value) {
+        return new JAXBElement<InvalidInputException>(_InvalidInputException_QNAME, InvalidInputException.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetHelloWorldAsString }{@code >}}
      * 
      */
@@ -95,12 +131,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetHelloDarknessMyOldFriendResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://package1/", name = "getHelloDarknessMyOldFriendResponse")
+    public JAXBElement<GetHelloDarknessMyOldFriendResponse> createGetHelloDarknessMyOldFriendResponse(GetHelloDarknessMyOldFriendResponse value) {
+        return new JAXBElement<GetHelloDarknessMyOldFriendResponse>(_GetHelloDarknessMyOldFriendResponse_QNAME, GetHelloDarknessMyOldFriendResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetHelloWorldAsStringResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://package1/", name = "getHelloWorldAsStringResponse")
     public JAXBElement<GetHelloWorldAsStringResponse> createGetHelloWorldAsStringResponse(GetHelloWorldAsStringResponse value) {
         return new JAXBElement<GetHelloWorldAsStringResponse>(_GetHelloWorldAsStringResponse_QNAME, GetHelloWorldAsStringResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetHelloDarknessMyOldFriend }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://package1/", name = "getHelloDarknessMyOldFriend")
+    public JAXBElement<GetHelloDarknessMyOldFriend> createGetHelloDarknessMyOldFriend(GetHelloDarknessMyOldFriend value) {
+        return new JAXBElement<GetHelloDarknessMyOldFriend>(_GetHelloDarknessMyOldFriend_QNAME, GetHelloDarknessMyOldFriend.class, null, value);
     }
 
     /**

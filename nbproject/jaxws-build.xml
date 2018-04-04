@@ -18,8 +18,8 @@
     </target>
     <target name="wsimport-client-HelloWorldService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/HelloWorldService"/>
-        <property name="wsdl-HelloWorldService" location="xml-resources/web-service-references/HelloWorldService/wsdl/asuslightom_21346/WebServicesGlass/HelloWorldService.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HelloWorldService" destdir="${build.generated.dir}/jax-wsCache/HelloWorldService" wsdl="${wsdl-HelloWorldService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://asuslightom:21346/WebServicesGlass/HelloWorldService?wsdl" xnocompile="true" xendorsed="true">
+        <property name="wsdl-HelloWorldService" location="xml-resources/web-service-references/HelloWorldService/wsdl/asuSLIGHTOM_8080/WebServicesGlass/HelloWorldService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HelloWorldService" destdir="${build.generated.dir}/jax-wsCache/HelloWorldService" wsdl="${wsdl-HelloWorldService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://asuSLIGHTOM:8080/WebServicesGlass/HelloWorldService?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-HelloWorldService}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/HelloWorldService"/>
         </wsimport>

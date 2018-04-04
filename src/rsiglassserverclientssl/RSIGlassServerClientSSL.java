@@ -13,6 +13,7 @@ import java.util.Scanner;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
 import package1.IHelloWorld;
+import package1.InvalidInputException_Exception;
 import package1.Product;
 
 /**
@@ -26,18 +27,18 @@ public class RSIGlassServerClientSSL {
      */
     private static final String WS_URL = "http://asuSLIGHTOM:8080/WebServicesGlass/HelloWorldService?wsdl";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidInputException_Exception {
 
         String userName = "", password = "", response = "";
         List<Product> products = null;
         package1.HelloWorldService service = new package1.HelloWorldService();
         package1.IHelloWorld port = service.getHelloWorldPort();
 
-        while (response.isEmpty() || response.contains("Unknown User!") || products == null) {
+        while (response.isEmpty() || response.contains("Unknown User") || products == null) {
             /*
             * *****************UserName & Password*****************************
              */
-            if(response.contains("Unknown User!")){
+            if(response.contains("Unknown User")){
                 System.out.println(response);
             }
             Scanner scan = new Scanner(System.in);
@@ -67,7 +68,7 @@ public class RSIGlassServerClientSSL {
         }
     }
 
-    private static String getHelloWorldAsString(java.lang.String arg0, IHelloWorld port) {
+    private static String getHelloWorldAsString(java.lang.String arg0, IHelloWorld port) throws InvalidInputException_Exception{
         return port.getHelloWorldAsString(arg0);
     }
 
